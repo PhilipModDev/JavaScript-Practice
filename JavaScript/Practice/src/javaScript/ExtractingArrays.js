@@ -1,4 +1,11 @@
 'use strict'
+
+
+
+function compare(stringOne,stringTwo){
+    return stringOne.localeCompare(stringTwo);
+ }
+
 //Creates a list of letters.
 const letters = [];
 //Letters to ne randomly created.
@@ -15,16 +22,10 @@ for (let i = 0 ; i < 10; i++){
 }
 //Sorts the letters.
 let lastLetter = letters[letters.length -1];
-for (let i = 0; i  < letters.length; i++){
-    let currentLetter = letters.shift();
-    let i = currentLetter.localeCompare(lastLetter);   
-    if (i == -1) {
-        letters.push(currentLetter);
-    }
-    if (i == 1 || i == 0){
-        letters.unshift(currentLetter);
-    }
-}
+let currentLetter = letters.shift();
+    letters.sort(compare);
+
+console.log(letters);
 //Creates the letters extracting.
 const [
   a,
