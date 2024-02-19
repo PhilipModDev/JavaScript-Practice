@@ -1,27 +1,17 @@
-'use strict'
+const express = require('express');
+const fs = require('node:fs');
+const app = express();
+const PORT = 80;
 
-//Defines a object
-const block = {};
-//Uses the defineProperty method to create the property.
-Object.defineProperty(block,'name',{
-    value : 'stone',
-    writable : false,
-    configurable : false
+app.get('/',(req,res) =>{
+    console.log(req.url);
+    fs.readFile('data.json','utf-8',(err,data) =>{
+        if (err) console.error;
+       res.send(data.toString());
+    });
 });
-//Prints it to the console.
-let value = block.name;
-console.log(value);
-
-let item = [
-    ['name','Apple'],
-    ['price','$100.99']
-]
-export let items = Object.fromEntries(item);
 
 
-export function getPrice({price}){
-     if (typeof price === 'string'){
-        console.log(price);
-        console.log('done.')
-     }
-}
+app.listen(PORT,() =>{
+   console.log(`Server port on: ${PORT}`);
+});
