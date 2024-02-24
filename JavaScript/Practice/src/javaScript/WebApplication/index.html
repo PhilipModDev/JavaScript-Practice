@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head lang="en-us">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A Web Server Test.">
+        <title>Web Server</title>
+    </head>
+    <body style="text-align: center; font: 1em sans-serif;">
+         <header><h1>Web Server Response</h1></header>
+
+         <form>
+            <input type="button" title="Button" onclick="sendRequest()" value="Submit Request">
+         </form>
+        <div id="output"></div>
+        <form>
+            <label>Send Post</label>
+            <br>
+            <input id="request" type="text" title="Post Request" placeholder="Post Request">
+            <br>
+            <input type="button" title="Button" onclick="sendPostRequest()" value="Submit Post Request">
+         </form>
+        <script src="index.js"></script>
+    </body>
+</html>
